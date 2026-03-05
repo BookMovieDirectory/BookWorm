@@ -1,7 +1,7 @@
 
 {
   "homepage": "https://BookMovieDirectory.github.io/BookWorm",
-  "name": "bookworm",
+  "name": "BookWorm",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
