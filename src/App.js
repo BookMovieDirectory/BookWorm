@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import * as XLSX from "xlsx";
 
 // ── Constants ──────────────────────────────────────────────────────────────────
@@ -254,8 +254,14 @@ function ItemForm({ initial, isMovie, onSave, onClose }) {
 // ── Main App ───────────────────────────────────────────────────────────────────
 export default function BookWorm() {
   const [section, setSection] = useState("books");
-  const [books, setBooks] = useState(SAMPLE_BOOKS);
-  const [movies, setMovies] = useState(SAMPLE_MOVIES);
+  const [books, setBooks] = useState(() => {
+    try { const s = localStorage.getItem("bookworm_books"); return s ? JSON.parse(s) : SAMPLE_BOOKS; }
+    catch { return SAMPLE_BOOKS; }
+  });
+  const [movies, setMovies] = useState(() => {
+    try { const s = localStorage.getItem("bookworm_movies"); return s ? JSON.parse(s) : SAMPLE_MOVIES; }
+    catch { return SAMPLE_MOVIES; }
+  });
   const [activeTab, setActiveTab] = useState("done");
   const [showModal, setShowModal] = useState(false);
   const [editItem, setEditItem] = useState(null);
@@ -274,6 +280,9 @@ export default function BookWorm() {
   const showToast = useCallback((msg, type="success") => {
     setToast({msg, type}); setTimeout(()=>setToast(null), 3000);
   }, []);
+
+  useEffect(() => { localStorage.setItem("bookworm_books", JSON.stringify(books)); }, [books]);
+  useEffect(() => { localStorage.setItem("bookworm_movies", JSON.stringify(movies)); }, [movies]);
 
   const switchSection = (s) => {
     setSection(s); setActiveTab("done"); setSearch(""); setFilterGenre("All");
