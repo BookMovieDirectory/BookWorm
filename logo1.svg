@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C1810;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A2010;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8C84A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C9A84C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A8873C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C0392B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B1A1A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="creamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5EDD8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8D8B8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="book1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B1A1A" />
+      <stop offset="100%" style="stop-color:#6B1414" />
+    </linearGradient>
+    <linearGradient id="book2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1A3A6B" />
+      <stop offset="100%" style="stop-color:#142B52" />
+    </linearGradient>
+    <linearGradient id="book3Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2E6B2E" />
+      <stop offset="100%" style="stop-color:#1A4A1A" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#00000044"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="circleClip">
+      <circle cx="200" cy="200" r="185"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="200" cy="200" r="195" fill="url(#goldGrad)" />
+  <!-- Inner background circle -->
+  <circle cx="200" cy="200" r="185" fill="url(#bgGrad)" />
+
+  <!-- Subtle texture lines -->
+  <g clip-path="url(#circleClip)" opacity="0.04">
+    <line x1="0" y1="50" x2="400" y2="50" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="100" x2="400" y2="100" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="150" x2="400" y2="150" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="200" x2="400" y2="200" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="250" x2="400" y2="250" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="300" x2="400" y2="300" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="350" x2="400" y2="350" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <!-- ── BOOKS group (left-center) ── -->
+  <g filter="url(#shadow)" transform="translate(0, -10)">
+
+    <!-- Book 3 (back, green) -->
+    <g transform="rotate(-12, 200, 220)">
+      <rect x="118" y="155" width="44" height="72" rx="2" fill="url(#book3Grad)"/>
+      <rect x="118" y="155" width="6" height="72" rx="1" fill="#1A4A1A"/>
+      <rect x="124" y="162" width="30" height="2" rx="1" fill="#ffffff22"/>
+      <rect x="124" y="168" width="22" height="2" rx="1" fill="#ffffff22"/>
+    </g>
+
+    <!-- Book 2 (middle, blue) -->
+    <g transform="rotate(-4, 200, 220)">
+      <rect x="138" y="148" width="46" height="78" rx="2" fill="url(#book2Grad)"/>
+      <rect x="138" y="148" width="6" height="78" rx="1" fill="#0E1F3E"/>
+      <rect x="146" y="156" width="30" height="2" rx="1" fill="#ffffff22"/>
+      <rect x="146" y="162" width="24" height="2" rx="1" fill="#ffffff22"/>
+      <rect x="146" y="168" width="28" height="2" rx="1" fill="#ffffff22"/>
+    </g>
+
+    <!-- Book 1 (front, red) — main book -->
+    <g transform="rotate(5, 200, 220)">
+      <rect x="158" y="143" width="50" height="84" rx="3" fill="url(#book1Grad)"/>
+      <rect x="158" y="143" width="8" height="84" rx="2" fill="#4A0A0A"/>
+      <!-- Page lines -->
+      <rect x="168" y="154" width="32" height="2" rx="1" fill="#ffffff33"/>
+      <rect x="168" y="161" width="26" height="2" rx="1" fill="#ffffff22"/>
+      <rect x="168" y="168" width="30" height="2" rx="1" fill="#ffffff22"/>
+      <rect x="168" y="175" width="20" height="2" rx="1" fill="#ffffff22"/>
+      <!-- Gold bookmark -->
+      <polygon points="196,143 202,143 202,158 199,154 196,158" fill="url(#goldGrad)"/>
+    </g>
+
+    <!-- Open book / pages at bottom -->
+    <g transform="translate(200, 238)">
+      <!-- Left page -->
+      <path d="M0,0 Q-28,-8 -52,2 L-52,18 Q-28,8 0,16 Z" fill="#F5EDD8" opacity="0.95"/>
+      <!-- Right page -->
+      <path d="M0,0 Q28,-8 52,2 L52,18 Q28,8 0,16 Z" fill="#EDE0C4" opacity="0.95"/>
+      <!-- Spine shadow -->
+      <line x1="0" y1="0" x2="0" y2="16" stroke="#C9A84C" stroke-width="1.5" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- ── FILM REEL (right side) ── -->
+  <g transform="translate(248, 172)" filter="url(#shadow)">
+    <!-- Outer reel ring -->
+    <circle cx="0" cy="0" r="38" fill="none" stroke="url(#goldGrad)" stroke-width="3.5"/>
+    <!-- Reel body -->
+    <circle cx="0" cy="0" r="34" fill="#1A1A2E"/>
+    <!-- Reel spokes -->
+    <g stroke="#C9A84C" stroke-width="2.5" opacity="0.7">
+      <line x1="0" y1="-20" x2="0" y2="20"/>
+      <line x1="-17.3" y1="-10" x2="17.3" y2="10"/>
+      <line x1="-17.3" y1="10" x2="17.3" y2="-10"/>
+    </g>
+    <!-- Center hub -->
+    <circle cx="0" cy="0" r="9" fill="#2C2C4A"/>
+    <circle cx="0" cy="0" r="6" fill="url(#goldGrad)"/>
+    <circle cx="0" cy="0" r="3" fill="#1A1A2E"/>
+    <!-- Film perforations around edge -->
+    <g fill="#2C1810">
+      <rect x="-3" y="-37" width="6" height="6" rx="1"/>
+      <rect x="-3" y="31" width="6" height="6" rx="1"/>
+      <rect x="31" y="-3" width="6" height="6" rx="1"/>
+      <rect x="-37" y="-3" width="6" height="6" rx="1"/>
+      <rect x="20" y="-32" width="6" height="6" rx="1" transform="rotate(45, 23, -29)"/>
+      <rect x="-26" y="-32" width="6" height="6" rx="1" transform="rotate(-45, -23, -29)"/>
+      <rect x="20" y="26" width="6" height="6" rx="1" transform="rotate(-45, 23, 29)"/>
+      <rect x="-26" y="26" width="6" height="6" rx="1" transform="rotate(45, -23, 29)"/>
+    </g>
+  </g>
+
+  <!-- ── Decorative gold star/sparkle between book and reel ── -->
+  <g transform="translate(218, 190)" fill="url(#goldGrad)" filter="url(#glow)">
+    <polygon points="0,-7 1.5,-1.5 7,0 1.5,1.5 0,7 -1.5,1.5 -7,0 -1.5,-1.5" opacity="0.9"/>
+  </g>
+
+  <!-- ── Text: BookWorm ── -->
+  <text x="200" y="304"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="36"
+    font-weight="bold"
+    fill="url(#goldGrad)"
+    text-anchor="middle"
+    letter-spacing="2"
+    filter="url(#glow)">BookWorm</text>
+
+  <!-- ── Tagline ── -->
+  <text x="200" y="326"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="11"
+    fill="#C9A84C"
+    text-anchor="middle"
+    letter-spacing="4"
+    opacity="0.8">READ · WATCH · REMEMBER</text>
+
+  <!-- ── Decorative line under title ── -->
+  <line x1="120" y1="334" x2="280" y2="334" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- ── Small stars ── -->
+  <g fill="#C9A84C" opacity="0.6">
+    <polygon points="112,334 113,331 114,334 117,334 115,336 116,339 113,337 110,339 111,336 109,334" transform="scale(0.6) translate(74, 220)"/>
+    <polygon points="112,334 113,331 114,334 117,334 115,336 116,339 113,337 110,339 111,336 109,334" transform="scale(0.6) translate(310, 220)"/>
+  </g>
+
+  <!-- Outer decorative ring dots -->
+  <g fill="url(#goldGrad)" opacity="0.5">
+    <circle cx="200" cy="18" r="2.5"/>
+    <circle cx="200" cy="382" r="2.5"/>
+    <circle cx="18" cy="200" r="2.5"/>
+    <circle cx="382" cy="200" r="2.5"/>
+  </g>
+</svg>
